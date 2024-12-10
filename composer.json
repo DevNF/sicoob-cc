@@ -17,6 +17,6 @@
     "minimum-stability": "dev",
     "require": {
         "guzzlehttp/guzzle": "^7.0.1",
-        "vlucas/valitron": "dev-master"
+        "vlucas/valitron": ">= 1.4.11"
     }
   }
