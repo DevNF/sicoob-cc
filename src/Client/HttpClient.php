@@ -56,6 +56,12 @@ class HttpClient
             if($e->hasResponse()) {
                 $res = json_decode($e->getResponse()->getBody()->getContents());
 
+                if(!empty($res->errors) && !empty($res->errors[0]->detail)) {
+                    return [
+                        'message' => $res->errors[0]->detail
+                    ];
+                }
+
                 if(!empty($res->detail)) return [
                     'message' => $res->detail,
                     'violacoes' => isset($res->violacoes) ? $res->violacoes : null
